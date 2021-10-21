@@ -15,11 +15,11 @@ def cache_outs(fn):
         tempkey = (fn.__name__, id(fn), tuple(args), tuple(kwargs))
         print(tempkey)
         if tempkey in cache.keys():
-            print("cached value used: " + str(cache[tempkey]) + " : " + str(tempkey))
+            #print("cached value used: " + str(cache[tempkey]) + " : " + str(tempkey))
             return cache[tempkey]
         else:
             tempreturn = fn(*args, **kwargs)
             cache[tempkey] = tempreturn
-            print("new value       :  " + str(cache[tempkey]) + " : " + str(tempkey))
+            #print("new value       :  " + str(cache[tempkey]) + " : " + str(tempkey))
             return tempreturn
     return wrapper
